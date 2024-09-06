@@ -4,10 +4,12 @@ This repository contains solutions to exercises from the Web Programming course.
 
 ## Solved Problems
 
-### 1. HTML
+### 1. HTML ![HTML](./1.Lab-HTML/lab_html.png)
    - Basic structure and semantics of web pages.
    - Creating lists, tables, and forms.
    - Embedding multimedia elements like images and videos.
+
+     
 
 ### 2. CSS
    - Styling web pages using selectors, classes, and IDs.

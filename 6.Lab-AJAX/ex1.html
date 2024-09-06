@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EX 1</title>
+    <style>
+        .grid-container{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 250px 250px;
+        }
+        .grid-vertical{
+            display: grid;
+            grid-template-columns: 150px;
+        }
+        select {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Rute trenuri</h1>
+        <div class="grid-container">
+            <div class="grid-vertical">
+                <label for="plecari">Statii plecari</label>
+                <br>
+                <select name="plecari" id="plecari" size=15></select>
+            </div>
+
+            <div class="grid-vertical">
+                <label for="sosiri">Statii sosiri</label>
+                <br>
+                <select name="sosiri" id="sosiri" size=15></select>
+            </div>
+        </div>
+    </center>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    //jQuery
+    //-----------------------------------------------------------------
+    $.get('ex1.php', function (response) {
+        response.split(';').forEach(function (statie) {
+            var option = document.createElement('option');
+            option.innerText = statie;
+            option.addEventListener("click", loadsosiri);
+            document.getElementById('plecari').appendChild(option);
+        })
+    })
+    //-----------------------------------------------------------------
+
+    //plain JavaScript
+    //-----------------------------------------------------------------
+    // var xmlhttp = new XMLHttpRequest();
+    // xmlhttp.onreadystatechange = function () {
+    //     if (this.readyState === 4 && this.status === 200) {
+    //         this.responseText.split(';').forEach(function (statie) {
+    //         var option = document.createElement('option');
+    //         option.innerText = statie;
+    //         option.addEventListener("click", loadsosiri);
+    //         document.getElementById('plecari').appendChild(option);
+    //     })
+    //     }
+    // }
+    // xmlhttp.open("GET", 'ex1.php', true);
+    // xmlhttp.send();
+    //-----------------------------------------------------------------
+
+
+    function loadsosiri(){
+                $.get('ex1.php?statie-plecare=' + this.innerText, function (response) {
+                    response = response.split(';')
+                    document.getElementById('sosiri').innerHTML = ''
+                    response.forEach(function (statie) {
+                        var option = document.createElement('option')
+                        option.innerText = statie
+                        document.getElementById('sosiri').appendChild(option);
+                    })
+                })
+    }
+
+    
+</script>
+
+</html>

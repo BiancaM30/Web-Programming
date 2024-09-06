@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex 4</title>
+        <style>
+            td {
+                border: 3px solid rgb(194, 139, 199);
+                text-align: center;
+                width: 70px;
+                height: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tic-Tac-Toe</h1>
+        <p id="firstPlayer"></p>
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br>
+        <button onclick="refreshGame()">Start again</button>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var cells;
+        var nrMoves;
+        refreshGame();
+
+        function refreshGame() {
+            cells = document.getElementsByTagName("td");
+            nrMoves = 0;
+            for (var i = 0; i < cells.length; i++) {
+                cells[i].innerText = '';
+                cells[i].addEventListener('click', playerMove);
+            }
+            var random = Math.round(Math.random());
+            if (random == 0) {
+                document.getElementById("firstPlayer").innerHTML = "You start";
+            } else {
+                document.getElementById("firstPlayer").innerHTML = "Computer starts";
+                play();
+            }
+        }
+
+        function play() {
+            var crtTable = [];
+            for (var i = 0; i < cells.length; i++) {
+                crtTable.push(cells[i].innerHTML);
+            }
+
+            // jQuery
+            // ---------------------------------------------------------------------
+            $.get("ex4.php?table=" + crtTable.toString(), function (position) {
+                if (position === 'X') {
+                    alert('Congrats! You won the game');
+                } else if (position.charAt(0) === 'O') {
+                    computerMove(position.charAt(1));
+                    alert("You lost the game! Try again");
+                } else {
+                    if (nrMoves == 8) {
+                        alert("Draw.Try again");
+                    } else {
+                        computerMove(position);
+                    }
+                }
+            })
+            // ---------------------------------------------------------------------
+
+            // plain JavaScript
+            // ---------------------------------------------------------------------
+            // var xmlhttp = new XMLHttpRequest();
+            // xmlhttp.onreadystatechange = function () {
+            //     if (this.readyState == 4 && this.status == 200) {
+            //         var position = this.responseText;
+            //         if (position === 'X') {
+            //             alert('Congrats! You won the game');
+            //         } else if (position.charAt(0) === 'O') {
+            //             computerMove(position.charAt(1));
+            //             alert("You lost the game! Try again");
+            //         } else {
+            //             if (nrMoves == 8) {
+            //                 alert("Draw.Try again");
+            //             } else {
+            //                 computerMove(position);
+            //             }
+            //         }
+            //     }
+            // }
+            // xmlhttp.open("GET", "ex4.php?table=" + crtTable.toString(), true);
+            // xmlhttp.send();
+            // ---------------------------------------------------------------------
+
+
+        }
+
+        function playerMove() {
+            this.innerHTML = 'X';
+            nrMoves += 1;
+            this.removeEventListener('click', playerMove);
+            play();
+        }
+
+        function computerMove(poz) {
+            cells[poz].innerHTML = 'O';
+            nrMoves += 1;
+            cells[poz].removeEventListener('click', playerMove);
+        }
+    </script>
+</html>

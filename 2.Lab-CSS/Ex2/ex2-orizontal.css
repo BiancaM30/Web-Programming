@@ -1,0 +1,55 @@
+body{
+	margin: 0px;
+
+}
+
+header {
+  display: flex;
+  background-color: red;
+  padding: 25px;  
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  font-size: 30px;
+}
+
+nav{
+ display: table;
+ text-align: center;
+ background-color: yellow;
+ width: 100%
+
+}
+nav ul{
+ display: table-row;
+ list-style-type: none;
+}
+
+nav ul li {
+ display: table-cell;
+ border-right: solid;
+ padding: 8px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+
+
+article {
+	display: flex;
+	background-color: green;
+	height: 390px;
+	justify-content: center;
+	align-items: center;
+
+}
+
+footer {
+	background-color: pink;
+	height: 45px;
+	padding: 15px;
+}
+

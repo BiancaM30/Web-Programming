@@ -1,0 +1,28 @@
+.container{
+	display: flex;
+	width: 400px;
+	border-style: solid;
+	
+}
+
+.left {
+	display: inherit;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.left p{
+	text-align: center;
+}
+
+.right {
+	display: inherit;
+    width: 200px;
+    justify-content: center;
+    align-items: center;    
+}
+
+.right img{
+    max-width: 100px;
+}

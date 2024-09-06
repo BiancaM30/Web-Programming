@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex 3</title>
+        <style>
+            div {
+                display: inline-block;
+                width: 400px;
+            }
+            tr {
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>Profesori</h3>
+            <form action="ex3prof.php" method="post" target="_blank">
+                <table>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Parola:</td>
+                        <td><input type="text" name="parola"></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+        <div>
+            <h3>Studenti</h3>
+            <form action="ex3stud.php" method="post" target="_blank">
+                <table cellpadding="10">
+                    <tr>
+                        <td>Nume:</td>
+                        <td><input type="text" name="nume"></td>
+                    </tr>
+                    <tr>
+                        <td>Prenume:</td>
+                        <td><input type="text" name="prenume"></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Consultare catalog">
+            </form>
+        </div>
+    </body>
+</html>

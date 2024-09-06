@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  width: 500px;
+  grid-template-columns: auto auto;
+  border: solid;
+  text-align: center;
+}
+
+.child {
+
+  text-align: center;
+  margin: 20px;
+  padding: 30px;
+  font-size: 30px;
+}
+
+img {
+    border: 20px solid yellow;
+    width: 100px;
+    height: 130px;
+}
+
+p {
+    display: inline;
+    font-size: 12px;
+    position: relative;
+    bottom: 40px;
+}

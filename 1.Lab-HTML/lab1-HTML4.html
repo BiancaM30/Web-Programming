@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang = "ro-RO">
+
+<head>
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Pizza Hut Delivery</title>
+</head>
+
+<body>
+	<center>
+		<a href="https://www.pizzahutdelivery.ro/ro">
+		<img src="PizzaHut.png" alt="logo" width="225" height="225">
+		</a>
+	</center>
+
+	<form action="" method="post">
+	<center>	
+        <h2>Formular comandă</h2>
+        <table border="1" cellpadding="7">
+
+    	   <tr>
+    	   <th colspan="6" bgcolor="red" ><font color="white"> Pasul 1: Alegeți pizza</font></th>
+    	   </tr>
+
+           <tr bgcolor="#ebd8d8">
+                <th>Pizza</th>
+                <th>Descriere</th>
+                <th>Preț</th>
+                <th>Cantitate</th>
+                <th>Adaugă extra</th>
+                <th>Alte mențiuni</th>
+            </tr>
+
+            <tr align="center" valign="middle">
+            	<td><img src="California.png" alt="pizza California" width="150" height="100"></td>
+            	<td>
+            		<b>California</b><br>(Sos de roșii, Mozzarella, Porumb, Ardei)
+            	</td>
+            	<td>De la 22.5 lei</td>
+            	<td><input type="text" name="cantitate1"></td>
+            	<td align="left" valign="top">
+            		<input type="checkbox" name="ciuperci1" value="ciuperci1">
+ 					<label> +ciuperci (+2.5 lei)</label><br>
+  					<input type="checkbox" name="masline1" value="masline1">
+ 					<label> +măsline (+2 lei)</label><br>
+  					<input type="checkbox" name="pui1" value="pui1">
+  					<label> +piept de pui (+5 lei)</label><br>
+            	</td>
+            	<td><textarea name="info" rows="3" cols="20"></textarea></td>
+            </tr>
+
+            <tr align="center">
+            	<td><img src="Roma.png" alt="pizza Roma" width="150" height="100"></td>
+            	<td>
+            		<b>Roma</b><br>(Sos de roșii, Mozzarella, Șuncă, Ciuperci, Măsline)</td>
+            	<td>De la 22.5 lei</td>
+            	<td><input type="text" name="cantitate2"></td>
+            	<td align="left" valign="top">
+            		<input type="checkbox" name="porumb2" value="porumb2">
+ 					<label> +porumb (+2.5 lei)</label><br>
+  					<input type="checkbox" name="oregano2" value="oregano2">
+ 					<label> +oregano (+2 lei)</label><br>
+  					<input type="checkbox" name="pepperoni2" value="pepperoni2">
+  					<label> +pepperoni (+5 lei)</label><br>
+            	</td>
+            	<td><textarea name="info" rows="3" cols="20"></textarea></td>   
+            </tr>
+
+            <tr align="center">
+            	<td><img src="QuattroFormaggi.png" alt="pizza QuattroFormaggi" width="150" height="100"></td>
+            	<td>
+            		<b>Quattro Formaggi</b><br>(Mozzarella, Cheddar, Emmentaler, brânza cu mucegai, oregano)</td>
+            	<td>De la 22.5 lei</td>
+            	<td><input type="text" name="cantitate3"></td>
+            	<td align="left" valign="top">
+            		<input type="checkbox" name="sos3" value="sos3">
+ 					<label> +sos de roșii (+2.5 lei)</label><br>
+  					<input type="checkbox" name="masline3" value="masline3">
+ 					<label> +măsline (+2 lei)</label><br>
+  					<input type="checkbox" name="pui3" value="pui3">
+  					<label> +piept de pui (+5 lei)</label><br>
+            	</td>
+            	<td><textarea name="info" rows="3" cols="20"></textarea></td>  
+            </tr>
+
+            <tr align="center">
+            	<td><img src="Pepperoni.png" alt="pizza Pepperoni" width="150" height="100"></td>
+            	<td>
+            		<b>Pepperoni</b><br>(Sos de roșii, Mozzarella, dublu salam, Pepperoni)</td>
+            	<td>De la 22.5 lei</td>
+            	<td><input type="text" name="cantitate4"></td>
+            	<td align="left" valign="top">
+            		<input type="checkbox" name="porumb4" value="porumb4">
+ 					<label> +porumb (+2.5 lei)</label><br>
+  					<input type="checkbox" name="masline4" value="masline4">
+ 					<label> +măsline (+2 lei)</label><br>
+  					<input type="checkbox" name="pui4" value="pui4">
+  					<label> +piept de pui (+5 lei)</label><br>
+            	</td>
+            	<td><textarea name="info" rows="3" cols="20"></textarea></td>
+            </tr>
+
+            <tr>
+            	<td colspan="3">
+            	<center>
+            		<table border="1" >
+            			<tr>
+            				<th colspan="2" bgcolor="red" >
+                                <font color="white"> Pasul 2: Configurează-ți produsul </font>
+            				</th>
+            			</tr>
+            			<tr>
+            				<th rowspan="2" bgcolor="#ebd8d8"> Dimensiune</th>
+            				<td>
+            					Mică-25.5 cm/Medie-30.5 cm/Mare-38 cm
+            				</td>
+            			</tr>
+            			<tr>
+            				<td>
+            					 <input type="radio" name="dimensiune" value="mica" checked>mică<br>
+								 <input type="radio" name="dimensiune" value="medie">medie (+10 lei)<br>
+								 <input type="radio" name="dimensiune" value="mare">mare (+17 lei)<br>
+            				</td>
+            			</tr>
+
+            			<tr>
+            				<th rowspan="1" bgcolor="#ebd8d8"> Blat</th>
+            				<td>
+            					 <input type="radio" name="blat" value="clasic" checked>Clasic - din aluat fin, pregătit dupa o rețetă proprie<br>
+								 <input type="radio" name="blat" value="italian">Italian - Subțire și ușor crocant<br>
+								 <input type="radio" name="blat" value="pufos">Pan - Un blat unic, pregătit dupa o rețetă specială: pufos la interior și crocant la exterior<br>
+            				</td>
+            			</tr>	
+            		</table>
+            	</center>
+            	</td>
+
+
+            	<td colspan="3">
+            		<center>
+            		<table border="1" >
+            			<tr>
+            				<th colspan="2" bgcolor="red" ><font color="white">
+            					Pasul 3: Alege sosurile (un sos gratuit inclus)</font>
+            				</th>
+            			</tr>
+            			<tr>
+            				<td>Țineți apăsat pe Ctrl (windows) sau Command (Mac) pentru a selecta mai multe opțiuni.</td>
+            				<td align="left">
+            					<select name="cookies" multiple size="10">
+            						<option value="1" selected>sos dulce</option>
+           							<option value="2">sos picant</option>
+            						<option value="3">sos dulce-acrișor</option>
+           							<option value="4">sos salsa</option>
+           							<option value="5" selected>sos salsa</option>
+           							<option value="6" selected>sos usturoi</option>
+           							<option value="7" selected>sos pesto</option>
+           							<option value="8" selected>sos alb</option>
+           							<option value="9" selected>sos napoletan</option>
+      						   </select>
+            			</td>
+            				
+            			</tr>
+            		</table>
+            		</center>
+                </td>
+            </tr>
+	</table>
+	</center>
+	
+	<br><br>
+	<div>
+        Lista de alergeni:
+        <ol type="I" start="1">
+            <li>Cereale cu conținut de gluten</li>
+            <li>Ouă și produse derivate</li>
+            <li>Arahide și produse derivate</li>
+            <li>Soia și produse derivate</li>
+            <li>Lapte și produse derivate</li>
+            <li>Dioxid de sulf și sulfiți</li>
+            <li>Lupin și produse derivate</li>
+        </ol>
+    </div>
+    <br><br>
+
+    <center>
+	<table border="1" cellpadding="7">
+           <tr>
+                <th colspan="6" bgcolor="red" ><font color="white">Pasul 4: Date de contact și adresă</font></th>
+            </tr>
+
+           <tr align="center">
+            	<td colspan="1" >Nume:</td>
+            	<td colspan="2">
+					<input type="text" id="nume" name="nume">
+            	</td>
+            	<td colspan="1" >Prenume:</td>
+            	<td colspan="2"> 
+					<input type="text" id="prenume" name="prenume">
+            	</td>
+            </tr>
+
+            <tr align="center">
+            	<td colspan="1" >Telefon:</td>
+            	<td colspan="2">
+					<input type="text" id="telefon" name="telefon">
+            	</td>
+            	<td colspan="1" >Email:</td>
+            	<td colspan="2">
+					<input type="text" id="email" name="email">
+            	</td>
+            </tr>
+		
+           <tr align="center">
+           		<td colspan="1">Țară</td>
+           		<td colspan="1">
+           			<input type="text" name="tara" value="Romania" readonly>
+           		</td>
+            	<td colspan="2"> 
+            		<label for="oras">Alegeți un oraș</label>
+					<select id="oras" name="oras">
+					<option value="cluj">Cluj-Napoca</option>
+					<option value="bucuresti">București</option>
+					<option value="timisoara">Timișoara</option>
+					</select>
+            	</td>
+
+				<td colspan="1" >Strada:</td>
+            	<td colspan="1">
+					<input type="text" id="strada" name="strada">
+            	</td>
+            </tr>
+
+            <tr align="center">
+            	<td colspan="1" >Număr:</td>
+            	<td colspan="1">
+					<input type="text" id="nr" name="nr">
+            	</td>
+            	<td colspan="1" >Scara:</td>
+            	<td colspan="1">
+					<input type="text" id="scara" name="scara">
+            	</td>
+            	<td colspan="1" >Apartament:</td>
+            	<td colspan="1">
+					<input type="text" id="apartament" name="apartament">
+            	</td>
+            </tr>
+
+            <tr align="center" >
+            	<td colspan="2">Informații adiționale pentru livrator:</td>
+            	<td colspan="4">
+					<textarea name="info" rows="3" cols="50"></textarea>
+            	</td>
+            </tr> 
+            <tr align="center">
+            	<td colspan="2">Plata</td>
+            	<td colspan="4">
+            		<input type="text" name="plata" value="card" disabled>
+            	</td>
+            </tr>
+    </table>
+    </center>
+
+	<br><br>
+
+	 <center>
+        <h3>Comenzile plasate pe site trebuie achitate exclusiv cu<span style="color: red"> card bancar</span></h3><br>
+        <table border="1" cellpadding="7">
+            <tr>
+                <th colspan="2" bgcolor="red"><font color="white">Pasul 5: Introduceți datele cardului bancar</font></th>
+            </tr>
+            <tr>
+                <td bgcolor="#ebd8d8">Nume titular:</td>
+                <td><input type="text" name="titular" size="45"></td>
+             </tr>
+             <tr>
+                <td bgcolor="#ebd8d8">Număr card:</td>
+                <td><input type="text" name="numar" size="30" maxlength="16"></td>
+             </tr>
+             <tr>
+                <td bgcolor="#ebd8d8">Data expirării:</td>
+                <td><input type="text" name="expira" size="20" maxlength="10"></td>
+              </tr>
+              <tr>
+                <td bgcolor="#ebd8d8">CVV (ultimele 3 cifre <br>de pe spatele cardului)</td>
+                <td><input type="text" name="cvv" size="10" maxlength="3"></td>
+              </tr>      
+        </table>
+
+	<br><br>
+ 	<input type="submit" value="Plasează comanda">
+	
+	<p><b>Vă mulțumim! Comanda va fi livrată în aproximativ o ora</b></p>
+	</center>
+
+
+	<fieldset>
+    <legend>Restaurantele noastre</legend>
+	<div align="left">
+		<ul type="disc">
+			<li> <strong>Cluj-Napoca</strong>
+       			<ol>
+        			<li>Iulius</li>
+        			<li>Vivo</li>
+        		</ol>
+			</li>
+
+			<li> <strong>București</strong>
+        		<ol>
+            		<li>Băneasa</li>
+            		<li>București Mall</li>
+            		<li>Cotroceni</li>
+            		<li>Dorobanți</li>
+            		<li>Mega Mall</li>
+        		</ol>
+    		</li>
+
+    		<li> <strong>Timișoara</strong>
+        		<ol>
+        			<li>Iulius</li>
+        			<li>Timișoara Shopping City</li>
+        		</ol>
+        	</li>
+
+        	<li> <strong>Bacău</strong>
+        		<ol>
+        			<li>Arena Mall</li>
+        		</ol>
+        	</li>
+
+        	<li> <strong>Brașov</strong>
+        		<ol>
+        			<li>Coresi</li>
+        		</ol>
+        	</li>
+        </ul>
+    </div>
+	</fieldset>
+
+	<fieldset>
+    <legend>Măsuri de siguranță</legend>
+		<div align="left">
+			<ul type="square">
+				<li>Gătim totul respectând cele mai înalte standarde de siguranță alimentară</li>
+				<li>Toți angajații noștri se spală pe mâini și se dezinfectează o dată la 20 de minute</li>
+				<li>Asigurăm echipamente de protecție, măști și mănuși de unică folosință, tuturor angajaților noștri</li>
+				<li>Verificăm zilnic starea de sănătate a tuturor angajaților din restaurantele noastre</li>
+				<li>Igienizăm și dezinfectăm suprafețele frecvent atinse, o dată la 30 de minute</li>
+				<li>Livrăm în condiții de siguranță deplină, odată ieșite din cuptor, produsele noastre nu mai sunt atinse de nimeni și sunt puse în ambalaje cu sigilii de siguranță.</li>
+			</ul>
+		</div>
+	</fieldset>
+
+    </form>
+</body>
+</html>
+

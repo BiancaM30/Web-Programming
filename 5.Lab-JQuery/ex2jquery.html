@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="ex2jquery.js"></script>
+</head>
+
+<body>
+    <form name="myForm" onsubmit="return false">
+        <table border="1" cellpadding="7">
+             <tr>
+               <td>Name: </td>
+               <td> <input type="text" name="name" id="name"> </td>
+             </tr>
+             <tr>
+               <td>Date of birth: </td>
+               <td> <input type="date" name="birthday" id="birthday"> </td>
+             </tr>
+             <tr>
+               <td>Age: </td>
+               <td> <input type="number" name="age" id="age" step=1 max=150> </td>
+             </tr>
+             <tr>
+               <td>Email: </td>
+               <td> <input type="text" name="email" id="email"> </td>
+             </tr>
+       </table>       
+
+     <br>
+     <input type="submit" id="mySubmit" value="Submit"> 
+   </form>
+</body>
+</html>

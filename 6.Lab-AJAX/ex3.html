@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex 3</title>
+        <style>
+            .input-group {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+            }
+            label {
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div>Selecteaza id-ul</div>
+            <select id="keySelector" size="5"></select>
+            <br><br>
+            <form onsubmit="modifyData()" onchange="changed()">
+                <div class="input-group">
+                    <label for="nume">Nume:</label>
+                    <input type="text" name="nume" id="nume">
+                </div>
+
+                <div class="input-group">
+                    <label for="prenume">Prenume:</label>
+                    <input type="text" name="prenume" id="prenume">
+                </div>
+
+                <div class="input-group">
+                    <label for="facultate">Facultate:</label>
+                    <input type="text" name="facultate" id="facultate">
+                </div>
+
+                <div class="input-group">
+                    <label for="grupa">Grupa:</label>
+                    <input type="number" name="grupa" id="grupa">
+                </div>
+                <br>
+                <input id="updateBtn" type="submit" value="Salveaza modificarile" disabled>
+            </form>
+        </center>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var crtId
+            var btnState = "off"
+
+            // jQuery
+            //---------------------------------------------------
+            // $.get("ex3.php", function (response) {
+            //     response.split(';').forEach(function (id) {
+            //         var option = document.createElement('option')
+            //         option.innerText = id
+            //         option.addEventListener("click", loadFormInputs)
+            //         $('#keySelector')[0].appendChild(option);
+            //     })
+            // })
+            //---------------------------------------------------
+
+            //plain JavScript
+            //---------------------------------------------------
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    this.responseText.split(';').forEach(function (id) {
+                        var option = document.createElement('option')
+                        option.innerText = id
+                        option.addEventListener("click", loadFormInputs)
+                        document.getElementById('keySelector').appendChild(option);
+                    })
+                }
+            }
+            xmlhttp.open("GET", "ex3.php", true);
+            xmlhttp.send();
+            //---------------------------------------------------
+
+            function alertModificariNesalvate() {
+                if (confirm("Doresti sa salvezi modificarile inainte sa schimbi id-ul?")) {
+                    modifyData();
+                } else {
+                    alert("Nu ai salvat modificarile!");
+                }
+            }
+
+            function loadFormInputs() {
+                if (!($("#updateBtn").is(":disabled"))) {
+                    $("#updateBtn").prop('disabled', true);
+                    alertModificariNesalvate();
+                }
+
+                crtId = this.innerText
+
+                //jQuery
+                //---------------------------------------------------
+                // $.get("ex3.php?id=" + crtId, function (response) {
+                //     response = response.split(';')
+                //     $('#nume').val(response[0])
+                //     $('#prenume').val(response[1])
+                //     $('#facultate').val(response[2])
+                //     $('#grupa').val(response[3])
+                // })
+                //---------------------------------------------------
+
+                //plain JavaScript
+                //---------------------------------------------------
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        var response = this.responseText.split(';')
+                        $('#nume').val(response[0])
+                        $('#prenume').val(response[1])
+                        $('#facultate').val(response[2])
+                        $('#grupa').val(response[3])
+                    }
+                }
+                xmlhttp.open("GET", "ex3.php?id=" + crtId, true);
+                xmlhttp.send();
+                //---------------------------------------------------
+
+            }
+
+            function modifyData() {
+                var url = "ex3.php?id=" + crtId + "&nume=" + $('#nume').val() + "&prenume=" + $('#prenume').val() + "&facultate=" + $('#facultate').val() + "&grupa=" + $('#grupa').val();
+
+                // jQuery
+                //---------------------------------------------------
+                // $.get(url, function (response) {
+                //     alert(response);
+                // })
+                //---------------------------------------------------
+
+                //plain JavaScript
+                //---------------------------------------------------
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+                //---------------------------------------------------
+            }
+
+            function changed() {
+                $("#updateBtn").prop('disabled', false);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex1</title>
+    </head>
+
+    <body>
+    <p>Put your favorite dog breeds in the first list and the least favorite in the second list</p>
+    <select id="favoriteList" size="10" multiple>
+        <option value="1" id="dog1" ondblclick="move(this.id)">Labrador</option>
+        <option value="2" id="dog2" ondblclick="move(this.id)">Poodle</option>
+        <option value="3" id="dog3" ondblclick="move(this.id)">Beagle</option>
+        <option value="4" id="dog4" ondblclick="move(this.id)">Pug</option>
+        <option value="5" id="dog5" ondblclick="move(this.id)">Dalmatian</option>
+    </select>
+
+    <select id="notFavoriteList" size="10" multiple>
+        <option value="1" id="dog6" ondblclick="move(this.id)">Bulldog</option>
+        <option value="2" id="dog7" ondblclick="move(this.id)">Rottweiler</option>
+        <option value="3" id="dog8" ondblclick="move(this.id)">Golden Retriever</option>
+        <option value="4" id="dog9" ondblclick="move(this.id)">Border Collie</option>
+        <option value="5" id="dog10" ondblclick="move(this.id)">Husky</option>
+    </select>
+
+    <script>
+        function move(id) {
+            var selectedItem = document.getElementById(id);
+            if (selectedItem.parentElement.id === 'favoriteList') {
+                selectedItem.parentNode.removeChild(selectedItem);
+                document.getElementById('notFavoriteList').appendChild(selectedItem);
+            } else {
+                selectedItem.parentNode.removeChild(selectedItem);
+                document.getElementById('favoriteList').appendChild(selectedItem);
+            }
+        }
+    </script>
+
+    </body>
+</html>

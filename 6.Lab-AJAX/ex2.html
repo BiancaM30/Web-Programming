@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex 2</title>
+        <style>
+            button {
+                width: 100px;
+            }
+            #prev {
+                margin-left: 10px;
+            }
+            #next {
+                margin-left: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <table id="persoane" cellpadding="7" border="1px solid black">
+                <thead>
+                    <tr>
+                        <th>
+                            Nume
+                        </th>
+                        <th>
+                            Prenume
+                        </th>
+                        <th>
+                            Telefon
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+            <br>
+            <button id="prev" disabled>Previous</button>
+            <button id="next">Next</button>
+        </center>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var page = 1;
+            var nrPages;
+
+            getNrOfPages();
+            function getNrOfPages() {
+                $.get("ex2.php", function (response) {
+                    nrPages = response;
+                    loadTable();
+                })
+            }
+            function loadTable() {
+                //plain JavaScript
+                //------------------------------------------------------------------------
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        var response = this.responseText.split(';');
+                        var newTbody = document.createElement('tbody');
+                        response.forEach(function (person) {
+                            var person = person.split(',')
+                            var row = document.createElement('tr')
+                            for (var i = 0; i < 4; i++) {
+                                var cell = document.createElement('td')
+                                cell.innerText = person[i]
+                                row.appendChild(cell)
+                            }
+                            newTbody.appendChild(row);
+                        })
+                        document.getElementById('persoane').appendChild(newTbody);
+                    }
+                }
+                xmlhttp.open("GET", "ex2.php?nr=" + nrPages + "&page=" + page, true);
+                xmlhttp.send();
+                //------------------------------------------------------------------------
+
+
+                // jQuery
+                //------------------------------------------------------------------------
+                // $.get("ex2.php?nr=" + nrPages + "&page=" + page, function (response) {
+                //     response = response.split(';');
+                //     var newTbody = document.createElement('tbody');
+                //     response.forEach(function (person) {
+                //         var person = person.split(',')
+                //         var row = document.createElement('tr')
+                //         for (var i = 0; i < 4; i++) {
+                //             var cell = document.createElement('td')
+                //             cell.innerText = person[i]
+                //             row.appendChild(cell)
+                //         }
+                //         newTbody.appendChild(row);
+
+                //     })
+                //     document.getElementById('persoane').appendChild(newTbody);
+                // })
+                //------------------------------------------------------------------------
+            }
+
+            $("#prev").click(function () {
+                if (page == nrPages) {
+                    $("#next").prop('disabled', false);
+                }
+
+                if (page > 1 && page<= nrPages) {
+                    page -= 1
+                }
+                if (page == 1) {
+
+                    $("#prev").prop('disabled', true);
+                }
+                $("tbody").children().remove()
+                loadTable();
+            })
+
+            $("#next").click(function () {
+                if (page == 1) {
+                    $("#prev").prop('disabled', false);
+                }
+                if (page>= 1 && page < nrPages) {
+                    page += 1
+                }
+                if (page == nrPages) {
+                    $("#next").prop('disabled', true);
+                }
+                $("tbody").children().remove()
+                loadTable();
+            })
+        </script>
+    </body>
+</html>

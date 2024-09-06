@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex 1</title>
+        <style>
+            tr {
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <form method="post" action="ex1.php" target="_blank">
+                <p>
+                    <b>Mersul trenurilor</b>
+                </p>
+                <table>
+                    <tr>
+                        <td>Statia de plecare</td>
+                        <td><input type="text" name="statie_plecare"></td>
+                    </tr>
+                    <tr>
+                        <td>Statia de sosire</td>
+                        <td><input type="text" name="statie_sosire"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" name="direct">
+                            <label for="direct">Doar curse directe</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" name="legatura">
+                            <label for="legatura">Curse de legatura</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center><input type="submit" value="Cauta trenuri"></center>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+    </body>
+</html>

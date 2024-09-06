@@ -1,0 +1,61 @@
+.dialog {
+    display: block;
+    width: 82%;
+}
+
+li {
+    display: inline-block;
+    border-radius: 25px;
+    border-style: groove;
+    text-align: center;
+    position: relative;
+    right: -220px;
+    margin: 30px 40px 30px 20px;
+    min-height: 150px;
+    min-width: 350px;
+    padding: 20px;
+
+   
+}
+
+.bob::before {
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 80px;
+    background: url("bob-alice.png") -80px 0;
+    background-repeat: no-repeat;
+    left: -140px;
+}
+
+.alice::before {
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 75px;
+    background: url("bob-alice.png") 0 0;
+    background-repeat: no-repeat;
+    left: -140px;
+}
+
+.bob::after {
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 20px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid grey;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+
+.alice::after {
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 20px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid grey;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}

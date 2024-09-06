@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ex3</title>
+    <style>
+        h2 {
+            text-align: center;
+            color: firebrick;
+        }
+
+        td {
+            width: 80px;
+            height: 80px;
+            background-color: antiquewhite;
+            border: 1px solid firebrick;
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        p {
+            display: none;
+        }
+
+        img {
+            height: 80px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Welcome to memory game!</h2>
+    <!-- <table border="1" cellpadding="7" align="center">
+        <tr>
+            <td onclick="numberGame('row1col1')">
+                <p id="row1col1">1</p>
+            </td>
+            <td onclick="numberGame('row1col2')">
+                <p id="row1col2">1</p>
+            </td>
+            <td onclick="numberGame('row1col3')">
+                <p id="row1col3">2</p>
+            </td>
+            <td onclick="numberGame('row1col4')">
+                <p id="row1col4">2</p>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="numberGame('row2col1')">
+                <p id="row2col1">3</p>
+            </td>
+            <td onclick="numberGame('row2col2')">
+                <p id="row2col2">3</p>
+            </td>
+            <td onclick="numberGame('row2col3')">
+                <p id="row2col3">4</p>
+            </td>
+            <td onclick="numberGame('row2col4')">
+                <p id="row2col4">4</p>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="numberGame('row3col1')">
+                <p id="row3col1">5</p>
+            </td>
+            <td onclick="numberGame('row3col2')">
+                <p id="row3col2">5</p>
+            </td>
+            <td onclick="numberGame('row3col3')">
+                <p id="row3col3">6</p>
+            </td>
+            <td onclick="numberGame('row3col4')">
+                <p id="row3col4">6</p>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="numberGame('row4col1')">
+                <p id="row4col1">7</p>
+            </td>
+            <td onclick="numberGame('row4col2')">
+                <p id="row4col2">7</p>
+            </td>
+            <td onclick="numberGame('row4col3')">
+                <p id="row4col3">8</p>
+            </td>
+            <td onclick="numberGame('row4col4')">
+                <p id="row4col4">8</p>
+            </td>
+        </tr>
+    </table> -->
+
+    
+    <table border="1" cellpadding="7" align="center">
+        <tr>
+            <td onclick="imageGame('row1col1')">
+                <img src="img1.jpg" id="row1col1" alt="">
+            </td>
+            <td onclick="imageGame('row1col2')">
+                <img src="img1.jpg" id="row1col2" alt="">
+            </td>
+            <td onclick="imageGame('row1col3')">
+                <img src="img2.jpg" id="row1col3" alt="">
+            </td>
+            <td onclick="imageGame('row1col4')">
+                <img src="img2.jpg" id="row1col4" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="imageGame('row2col1')">
+                <img src="img3.jpg" id="row2col1" alt="">
+            </td>
+            <td onclick="imageGame('row2col2')">
+                <img src="img3.jpg" id="row2col2" alt="">
+            </td>
+            <td onclick="imageGame('row2col3')">
+                <img src="img4.jpg" id="row2col3" alt="">
+            </td>
+            <td onclick="imageGame('row2col4')">
+                <img src="img4.jpg" id="row2col4" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="imageGame('row3col1')">
+                <img src="img5.jpg" id="row3col1" alt="">
+            </td>
+            <td onclick="imageGame('row3col2')">
+                <img src="img5.jpg" id="row3col2" alt="">
+            </td>
+            <td onclick="imageGame('row3col3')">
+                <img src="img6.jpg" id="row3col3" alt="">
+            </td>
+            <td onclick="imageGame('row3col4')">
+                <img src="img6.jpg" id="row3col4" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="imageGame('row4col1')">
+                <img src="img7.jpg" id="row4col1" alt="">
+            </td>
+            <td onclick="imageGame('row4col2')">
+                <img src="img7.jpg" id="row4col2" alt="">
+            </td>
+            <td onclick="imageGame('row4col3')">
+                <img src="img8.jpg" id="row4col3" alt="">
+            </td>
+            <td onclick="imageGame('row4col4')">
+                <img src="img8.jpg" id="row4col4" alt="">
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <div>
+        <label>Numar incercari: </label>
+        <label id="counter"></label>
+    </div>
+        
+    <script src="ex3.js"></script>
+</body>
+
+</html>

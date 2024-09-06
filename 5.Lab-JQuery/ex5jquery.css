@@ -1,0 +1,67 @@
+ img {
+    height: 200px;
+    width: 450px;
+    margin-left: 350px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.text {
+    color: white;
+    position: absolute;
+    left: 398px;
+    top: 220px;
+    text-align: center;
+    padding: 5px 90px;
+    width: 270px;
+    background-color: #187ba1bb;
+}
+
+.text:hover {
+    background-color: #42484bbb;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+.prev {
+    position: absolute;
+    padding: 20px;
+    left: 365px;
+    top: 150px;
+    background: url("arrowLeft.jpg") no-repeat;
+    border: none;
+    background-size: 30px;
+}
+
+.next {
+    position: absolute;
+    padding: 20px;
+    left: 850px;
+    top: 150px;
+    background: url("arrowRight.jpg") no-repeat;
+    border: none;
+    background-size: 30px;
+}
+
+#li2,
+#li3,
+#li4 {
+    display: none;
+}

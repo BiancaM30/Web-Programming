@@ -1,0 +1,19 @@
+HTML 4
+Erori:
+- informatii aditionale la DOCTYPE
+- nu exista CHARSET
+- nu exista autocomplete in <form method="post" autocomplete="on">
+- trebuie pus <form action=...>
+- input type nu poate fi number => nu se poate folosi nici 'step', nici 'max'
+- input type nu poate fi email
+
+HTML
+Erori - nu se pot folosi:
+-center
+-cellpading
+-border
+-bgcolor
+-font
+-align
+-valign
+-ul type
